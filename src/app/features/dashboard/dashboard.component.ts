@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../shared/api/api.service'
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -15,13 +15,16 @@ import {
 import { HttpResponse } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmationModalComponent } from 'src/app/shared/confirmation-modal/confirmation-modal.component';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
@@ -31,6 +34,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<PostModel>;
   selection = new SelectionModel<PostModel>(true, []);
   public selectedData: any[] = [];
+
+  myControl = new FormControl();
+  options: any[] = [];
+  filteredOptions: Observable<string[]>;
 
   constructor(
     private readonly apiService: ApiService,
@@ -42,9 +49,22 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getPosts();
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
   }
 
-  ngAfterViewInit() {
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  public applyFilter(filterValue: string): void {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
   public getPosts(): void {
@@ -52,6 +72,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       this.dataSource = new MatTableDataSource<PostModel>(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      data.forEach(post => {
+        this.options.push(post.body);
+      })
+      this.dataSource.filterPredicate = function (data, event: string): boolean {
+        return data.body.toLowerCase().includes(event) || data.body.toLowerCase().includes(event);
+      };
     })
   }
 

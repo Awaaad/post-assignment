@@ -22,9 +22,10 @@ import { ExcelService } from './shared/excel/excel.service';
 import { PostDetailComponent } from './features/post-detail/post-detail.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './features/login/login.component';
 import { AuthGuard } from './shared/auth/auth.guard';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { AuthGuard } from './shared/auth/auth.guard';
     MatTableModule,
     MatCheckboxModule,
     MatSortModule,
+    MatAutocompleteModule,
     MatDialogModule
   ],
   providers: [ExcelService, MatSnackBar, AuthGuard],
