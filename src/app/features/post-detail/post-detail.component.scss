@@ -1,0 +1,27 @@
+.form-card {
+  margin: 2em auto;
+  width: 50em;
+  margin-top: 5em;
+  .card-title {
+    font-size: 25px;
+    margin-bottom: 1em;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+textarea {
+  height: 20em;
+}
+
+.mat-input-element:disabled,
+.mat-form-field-type-mat-native-select.mat-form-field-disabled
+  .mat-form-field-infix::after {
+  color: rgb(53, 53, 53);
+}

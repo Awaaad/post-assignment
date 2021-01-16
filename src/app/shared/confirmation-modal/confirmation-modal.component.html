@@ -1,0 +1,23 @@
+<section class="container p-0 d-flex flex-column">
+    <header class="modal-header w-100 p-3">
+      <h3>{{headerText}}</h3>
+    </header>
+    <section class="p-3 flex-grow-1">
+      <div class="container-fluid">
+        <div class="message row px-0 mt-4">
+          {{messageText}}
+        </div>
+      </div>
+    </section>
+    <footer class="modal-footer d-flex justify-content-end p-3 mt-auto mb-3" mat-dialog-actions>
+        <div class="action-btns">
+            <div>
+            </div>
+            <div>
+                <button mat-raised-button class="save-btn mle-1" (click)="close(true)">{{positiveButton}}</button>
+                <button mat-raised-button color="warn" (click)="close(false)">{{negativeButton}}</button>
+            </div>
+        </div>
+    </footer>
+  </section>
+  

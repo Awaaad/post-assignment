@@ -1,0 +1,38 @@
+.form-card {
+  margin: 2em auto;
+  width: 50em;
+  margin-top: 5em;
+  .card-title {
+    font-size: 25px;
+    margin-bottom: 1em;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+.error-message {
+  color: red;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+textarea {
+  height: 20em;
+}
+
+.action-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mle-1 {
+  margin-left: 1em;
+}
+
+.save-btn {
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,34 @@
+<div class="form-card">
+    <div class="card-title">Post</div>
+    <mat-card>
+        <form [formGroup]="profileForm">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>User Id</mat-label>
+                    <input matInput formControlName="userId" [value]="post?.userId">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="id" [value]="post?.id">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title" [value]="post?.title">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Body</mat-label>
+                    <textarea matInput formControlName="body" [value]="post?.body"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-card>
+</div>

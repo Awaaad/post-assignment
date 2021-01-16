@@ -1,0 +1,45 @@
+<div class="form-card">
+    <div class="card-title">Add Post</div>
+    <mat-card>
+        <form [formGroup]="profileForm">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title">
+                    <mat-error class="error-messages">
+                        <ng-container *ngFor="let error of errorMessages.title">
+                            <div class="error-message"
+                                *ngIf="profileForm.get('title').hasError(error.type) && (profileForm.get('title').dirty || profileForm.get('title').touched)">
+                                {{ error.message }}
+                            </div>
+                        </ng-container>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Body</mat-label>
+                    <textarea matInput formControlName="body"></textarea>
+                    <mat-error class="error-messages">
+                        <ng-container *ngFor="let error of errorMessages.body">
+                            <div class="error-message"
+                                *ngIf="profileForm.get('body').hasError(error.type) && (profileForm.get('body').dirty || profileForm.get('body').touched)">
+                                {{ error.message }}
+                            </div>
+                        </ng-container>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="action-btns">
+                <div>
+                </div>
+                <div>
+                    <button mat-raised-button color="warn" (click)="profileForm.reset()">Cancel</button>
+                    <button [disabled]="profileForm.invalid" mat-raised-button class="save-btn mle-1" (click)="savePost()">Save</button>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

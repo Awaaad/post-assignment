@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+
+.table-container {
+    margin: 3em;
+    margin-top: 1em;
+}
+
+.id {
+    width: 5em;
+}
+
+.table-checbox {
+    width: 5em;
+}
+
+.export-btn {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    color: white;
+    background-color: black;
+}
+.detail-btn {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.delete-btn {
+    color:red;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    margin-left: 10px;
+}

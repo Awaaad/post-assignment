@@ -1,0 +1,57 @@
+.mat-toolbar-header-nav {
+    background-color: rgb(34, 34, 34);
+}
+
+.mat-toolbar-side-nav {
+    background-color: white;
+    border-bottom: 2px solid rgb(34, 34, 34);
+    display: flex;
+    justify-content: space-between;
+}
+
+.burger-menu-btn {
+    color: white;
+    background: none;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.app-header-nav-title { 
+    color:white;
+}
+
+.app-side-nav-title {
+    color:black;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+.nav-item {
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+    .nav-item-text {
+        margin-top: 3px;
+        margin-left: 8px;
+    }
+}
+
+.app-side-nav-lio {
+    font-size: 13px;
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-side-nav" mode="side">
+        <mat-toolbar class="mat-toolbar-side-nav">
+            <div class="app-side-nav-title">PMS</div>
+            <div>
+                <span class="app-side-nav-lio" *ngIf="isloggedIn" (click)="logout()">Logout</span>
+                <span class="app-side-nav-lio" *ngIf="!isloggedIn" routerLink="/login">Login</span>
+            </div>
+        </mat-toolbar>
+
+        <div class="nav-item" routerLink="/dashboard" *ngIf="isloggedIn">
+            <div class="material-icons">analytics</div>
+            <div class="nav-item-text">Dashboard</div>
+        </div>
+        <div class="nav-item"  routerLink="/profile" *ngIf="isloggedIn">
+            <div class="material-icons">post_add</div>
+            <div class="nav-item-text">Add Post</div>
+        </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <mat-toolbar class="mat-toolbar-header-nav">
+            <button (click)="drawer.toggle()" mat-icon-button class="burger-menu-btn"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="app-header-nav-title">Posts Management System</span>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.success-snackbar {
+  background: rgb(42, 197, 42);
+  color: white;
+}
+.error-snackbar {
+  background: red;
+  color: white;
+}
+
+/* modal css */
+.modal-common-css {
+  max-width: 80%;
+  min-width: 300px;
+}
+.modal-header {
+  background-color: var(--dialog-header-background);
+}
+.modal-header h3 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.btn.modal-btn {
+  min-width: 100px;
+}
