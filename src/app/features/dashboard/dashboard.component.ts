@@ -27,17 +27,17 @@ import { map, startWith } from 'rxjs/operators';
 export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  private horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  private verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  displayedColumns: string[] = ['select', 'userId', 'id', 'title', 'body', 'detail', 'delete'];
-  dataSource: MatTableDataSource<PostModel>;
-  selection = new SelectionModel<PostModel>(true, []);
+  public displayedColumns: string[] = ['select', 'userId', 'id', 'title', 'body', 'detail', 'delete'];
+  public dataSource: MatTableDataSource<PostModel>;
+  public selection = new SelectionModel<PostModel>(true, []);
   public selectedData: any[] = [];
 
-  myControl = new FormControl();
-  options: any[] = [];
-  filteredOptions: Observable<string[]>;
+  public myControl = new FormControl();
+  public options: any[] = [];
+  public filteredOptions: Observable<string[]>;
 
   constructor(
     private readonly apiService: ApiService,
@@ -142,13 +142,10 @@ export class DashboardComponent implements OnInit {
                   horizontalPosition: this.horizontalPosition,
                   verticalPosition: this.verticalPosition,
                 });
-              } else {
-              }
+              } 
             }
             ))
-        } else {
-
-        }
+        } 
       }
     );
   }

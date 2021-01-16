@@ -15,8 +15,8 @@ import {
 })
 export class ProfileComponent implements OnInit {
   public profileForm: FormGroup;
-  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  private horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  private verticalPosition: MatSnackBarVerticalPosition = 'top';
   public errorMessages = {
     title: [
       { type: 'required', message: 'Title is required' },
@@ -61,8 +61,7 @@ export class ProfileComponent implements OnInit {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
           });
-        } else {
-        }
+        } 
       })
     )
   }

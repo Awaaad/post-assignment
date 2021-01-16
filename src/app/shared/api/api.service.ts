@@ -12,7 +12,6 @@ export class ApiService {
 
     constructor(private http: HttpClient) { }
 
-    // customer
     public getAllPosts(): Observable<PostModel[]> {
         return this.http.get<PostModel[]>(`${this.baseUrl}posts`);
     }
@@ -28,8 +27,4 @@ export class ApiService {
     public deletePost(id: number): Observable<string> {
         return this.http.delete<string>(`${this.baseUrl}posts/${id}`);
     }
-    // public editCustomer(customerDto: CustomerDto): Observable<string> {
-    //     return this.http.put<string>(this.baseUrl + 'edit-customer', customerDto);
-    // }
-
 }

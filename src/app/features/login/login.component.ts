@@ -14,8 +14,8 @@ import { LoginLogoutService } from 'src/app/shared/auth/login-logout.service'
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  private horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  private verticalPosition: MatSnackBarVerticalPosition = 'top';
   public errorMessages = {
     username: [
       { type: 'required', message: 'Username is required' },
@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   };
 
   constructor(
-    private readonly apiService: ApiService,
     private snackBar: MatSnackBar,
     private readonly router: Router,
     private readonly loginLogoutService: LoginLogoutService
