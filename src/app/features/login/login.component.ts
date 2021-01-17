@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    if (this.loginForm.get('username').value === 'test' && this.loginForm.get('password').value === 'test') {
+    if (this.loginForm.get('username').value === 'mcShares' && this.loginForm.get('password').value === 'mcShares') {
       this.router.navigate(['/dashboard']);
       localStorage.setItem('username', this.loginForm.get('username').value);
       localStorage.setItem('role', 'ADMIN');
