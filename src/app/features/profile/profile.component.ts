@@ -32,6 +32,10 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.initialiseForm();
+  }
+
+  private initialiseForm(): void {
     this.profileForm = new FormGroup({
       title: new FormControl('', Validators.compose([
         Validators.required

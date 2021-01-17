@@ -78,6 +78,14 @@ export class DashboardComponent implements OnInit {
       this.dataSource.filterPredicate = function (data, event: string): boolean {
         return data.body.toLowerCase().includes(event) || data.body.toLowerCase().includes(event);
       };
+    },
+    err => {
+      this.snackBar.open('Server Error (Server not responding correctly)', '', {
+        duration: 2000,
+        panelClass: ['error-snackbar'],
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     })
   }
 

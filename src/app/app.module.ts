@@ -26,6 +26,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './features/login/login.component';
 import { AuthGuard } from './shared/auth/auth.guard';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { CommentsComponent } from './features/comments/comments.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ProfileComponent,
     PostDetailComponent,
     ConfirmationModalComponent,
-    LoginComponent
+    LoginComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
